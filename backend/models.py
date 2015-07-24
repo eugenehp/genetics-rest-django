@@ -19,7 +19,7 @@ class Order(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(User, related_name='+')
     date = models.DateTimeField(auto_now_add=False)
-    status = models.CharField(max_length=2,
+    status = models.CharField(max_length=20,
                                       choices=STATUS_CHOICES,
                                       default=RECEIVED)
 
