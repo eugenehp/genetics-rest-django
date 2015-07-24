@@ -77,14 +77,11 @@ WSGI_APPLICATION = 'genetics.wsgi.application'
 #     }
 # }
 
-import os
-if os.environ.get('HEROKU'):  # heroku config:set HEROKU=1
-    import dj_database_url
-    # Parse database configuration from $DATABASE_URL
-    DATABASES['default'] =  dj_database_url.config()
+# Parse database configuration from $DATABASE_URL
+DATABASES['default'] =  dj_database_url.config()
 
-    # Enable Connection Pooling (if desired)
-    DATABASES['default']['ENGINE'] = 'django_postgrespool'
+# Enable Connection Pooling (if desired)
+#DATABASES['default']['ENGINE'] = 'django_postgrespool'
 
 LOGIN_REDIRECT_URL = '/'
 
